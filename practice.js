@@ -216,11 +216,17 @@ var user2 = {
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
+function changeProp(propName, newValue) {
+    user2[ propName ] = newValue;
+};
+
+changeProp('name', 'Tyler S. McGinnis');
+changeProp('email', 'tyler.mcginnis@devmounta.in');
 
 //Now call the sayEmail method that's on the user object which will alert the users email
 
   //Code Here
-
+user2.sayEmail();
 
 
 
@@ -232,16 +238,25 @@ var user2 = {
 //Create an empty object called methodCollection.
 
   //Code Here
+var methodCollection = {};
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
+methodCollection.alertHello = function() {
+    alert('hello');
+}
+methodCollection.logHello = function() {
+    console.log('hello');
+}
 
 //Now call your alertHello and logHello methods.
 
   //Code Here
+methodCollection.alertHello();
+methodCollection.logHello(); 
 
 
 
@@ -253,6 +268,16 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // parameters and returns a new object with all of the information that you passed in.
 
   //Code Here
+function makePerson (name, birthday, ssn) {
+    var person = {};
+    person.name = name;
+    person.birthday = birthday;
+    person.ssn = ssn;
+    return person;
+};
+
+makePerson('Jesse Boucher', '02/08/1979', '123-555-1234');
+
 
 
 
@@ -263,7 +288,15 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called makeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object and returns that object so that whenever you invoke makeCard, you get a brand new credit card.
 
   //Code Here
+function makeCard (cardNumber, expirationDate, securityCode) {
+    var creditcard = {};
+    creditcard.cardNumber = cardNumber;
+    creditcard.expirationDate = expirationDate;
+    creditcard.securityCode = securityCode;
+    return creditcard;
+};
 
+makeCard('1111 2222 3333 4444', '12/18', '555');
 
 
 //NEXT PROBLEM
@@ -276,3 +309,29 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 */
 
   //Code Here
+function bindCard (person, creditcard) {
+    var newCard = {};
+    newCard.name = person.name;
+    newCard.birthday = person.birthday;
+    newCard.ssn = person.ssn;
+    newCard.cardNumber = creditcard.cardNumber;
+    newCard.expirationDate = creditcard.expirationDate;
+    newCard.securityCode = creditcard.securityCode;
+    return newCard;
+}
+
+bindCard();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
